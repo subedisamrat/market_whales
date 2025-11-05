@@ -10,6 +10,7 @@ export const INVESTMENT_GOALS = [
   { value: "Income", label: "Income" },
   { value: "Balanced", label: "Balanced" },
   { value: "Conservative", label: "Conservative" },
+  { value: "Freedom", label: "Freedom" },
 ];
 
 export const RISK_TOLERANCE_OPTIONS = [
