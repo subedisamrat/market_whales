@@ -9,7 +9,7 @@ interface TradingViewWidgetProps {
   scriptUrl: string;
   config: Record<string, unknown>;
   height?: number;
-  className: string;
+  className?: string;
 }
 
 const TradingViewWidget = ({
