@@ -7,7 +7,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <section className="auth-left-section scrollbar-hide-default">
         <Link href="/" className="auth-logo">
           <Image
-            src="assets/icons/logo.svg"
+            src="/assets/icons/logo.svg"
             alt="Market_Whales"
             width={140}
             height={32}

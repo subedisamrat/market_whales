@@ -25,7 +25,7 @@ const SignUp = () => {
       password: "",
       country: "NP",
       investmentGoals: "Freedom",
-      riskTolerance: "medium",
+      riskTolerance: "Medium",
       preferredIndustry: "Technology",
     },
     mode: "onBlur",
@@ -54,14 +54,17 @@ const SignUp = () => {
 
         <InputField
           name="email"
+          type="email"
           label="Email"
           placeholder="samratdada@google.com"
           register={register}
           error={errors.email}
           validation={{
             required: "Email is required",
-            pattern: /^\w+@\w+\.\w+$/,
-            message: "Email address is required",
+            pattern: {
+              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+              message: "Please enter a valid email address",
+            },
           }}
         />
 
@@ -113,6 +116,8 @@ const SignUp = () => {
           required
         />
 
+        {/* Submit Button */}
+
         <Button
           type="submit"
           disabled={isSubmitting}
@@ -120,6 +125,8 @@ const SignUp = () => {
         >
           {isSubmitting ? "Creating Account" : "Start Your Investing Journey"}
         </Button>
+
+        {/* Footer */}
 
         <FooterLink
           text="Already have an account?"
