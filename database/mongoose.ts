@@ -37,12 +37,3 @@ export const connectToDatabase = async () => {
   console.log(`Connected to database: ${dbName}__(${process.env.NODE_ENV})`);
   return cached.conn;
 };
-
-//   try {
-//     cached.conn = await cached.promise;
-//   } catch (error) {
-//     cached.promise = null;
-//     throw error;
-//   }
-//   console.log(`Connected to database ${process.env.NODE_ENV}--${MONGODB_URI}`);
-// };
