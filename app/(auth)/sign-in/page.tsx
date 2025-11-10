@@ -22,10 +22,28 @@ const SignIn = () => {
     mode: "onBlur",
   });
 
+  // const onSubmit = async (data: SignInFormData) => {
+  //   try {
+  //     const result = await signInWithEmail(data);
+  //     if (result.success) router.push("/");
+  //   } catch (e) {
+  //     console.error(e);
+  //     toast.error("Sign in failed", {
+  //       description: e instanceof Error ? e.message : "Failed to sign in.",
+  //     });
+  //   }
+  // };
+
   const onSubmit = async (data: SignInFormData) => {
     try {
       const result = await signInWithEmail(data);
-      if (result.success) router.push("/");
+      if (!result?.success) {
+        toast.error("Sign in failed", {
+          description: result?.error ?? "Failed to sign in.",
+        });
+        return;
+      }
+      router.push("/");
     } catch (e) {
       console.error(e);
       toast.error("Sign in failed", {

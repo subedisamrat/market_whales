@@ -35,10 +35,31 @@ const SignUp = () => {
     mode: "onBlur",
   });
 
+  // const onSubmit = async (data: SignUpFormData) => {
+  //   try {
+  //     const result = await signUpWithEmail(data);
+  //     if (!result.success) router.push("/");
+  //   } catch (error) {
+  //     console.error("Error", error);
+  //     toast.error("Sign Up failed", {
+  //       description:
+  //         error instanceof Error
+  //           ? error.message
+  //           : "Failed to create an account",
+  //     });
+  //   }
+  // };
+
   const onSubmit = async (data: SignUpFormData) => {
     try {
       const result = await signUpWithEmail(data);
-      if (result.success) router.push("/");
+      if (!result?.success) {
+        toast.error("Sign Up failed", {
+          description: result?.error ?? "Failed to create an account",
+        });
+        return;
+      }
+      router.push("/");
     } catch (error) {
       console.error("Error", error);
       toast.error("Sign Up failed", {
