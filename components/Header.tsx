@@ -12,8 +12,8 @@ const Header = ({ user }: { user: User }) => {
           <Image
             alt="Market Whales"
             src="/assets/icons/logo.svg"
-            width={140}
-            height={32}
+            width={300}
+            height={70}
             className="h-8 w-auto cursor-pointer"
           />
         </Link>

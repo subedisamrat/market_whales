@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Market Whales",
+  title: "Market Whales || Your source of Freedom",
   description: "Track real time market price, and company insights.",
 };
 
