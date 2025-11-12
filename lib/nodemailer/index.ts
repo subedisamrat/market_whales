@@ -1,5 +1,8 @@
 import nodemailer from "nodemailer";
-import { NEWS_SUMMARY_EMAIL_TEMPLATE, WELCOME_EMAIL_TEMPLATE } from "./templates";
+import {
+  NEWS_SUMMARY_EMAIL_TEMPLATE,
+  WELCOME_EMAIL_TEMPLATE,
+} from "./templates";
 
 export const transporter = nodemailer.createTransport({
   service: "gmail",
@@ -43,7 +46,7 @@ export const sendNewsSummaryEmail = async ({
   ).replace("{{newsContent}}", newsContent);
 
   const mailOptions = {
-    from: `MarketWhales News" <marketwhales00@gmail.com>`,
+    from: `"MarketWhales News" <marketwhales00@gmail.com>`,
     to: email,
     subject: `📈 Market News Summary Today - ${date}`,
     text: `Today's market news summary from MarketWhales`,
