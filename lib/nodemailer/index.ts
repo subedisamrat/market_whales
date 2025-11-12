@@ -24,7 +24,7 @@ export const sendWelcomeEmail = async ({
   const mailOptions = {
     from: `"MarketWhales" <markewhales00@gmail.com>`,
     to: email,
-    subject: `Welcome to MarketWhales - your market analytics tools are ready`,
+    subject: `Welcome to MarketWhales - Your market analytics tools are ready`,
     text: "Thanks for joining MarketWhales",
     html: htmlTemplate,
   };
